@@ -1,0 +1,43 @@
+#brandName a {
+  color: #ffffff;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family: 'Bungee', cursive;
+  margin-top: 10px;
+}
+
+#brandName a:hover {
+  color: #4056A1;
+  padding: 5px;
+  background-color: #ffffff;
+  height: 100%;
+  border-radius: 10px 0;
+  font-weight: 900;
+}
+
+nav {
+ display: flex;
+ justify-content: space-between;
+ background-color: #4056A1;
+ height: 120px;
+ border-radius: 5px;
+ padding: 2.5em 1.5em 1.5em 1.5em;
+ color: #ffffff;
+}
+
+.downArrow {
+  border-right: 3px solid red;
+  border-bottom: 3px solid red;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+#writeTweet {
+  display: flex;
+  flex-direction: column;
+}
+
+#writeTweet > p {
+  margin: -10px auto;
+}
