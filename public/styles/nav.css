@@ -33,6 +33,7 @@ nav {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
 #writeTweet {
   display: flex;
   flex-direction: column;

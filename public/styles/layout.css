@@ -31,5 +31,8 @@ body {
 
  main {
    width: 90%;
-   border: 1px solid red;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
  }
