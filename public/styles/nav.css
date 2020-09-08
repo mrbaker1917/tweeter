@@ -23,6 +23,8 @@ nav {
  height: 120px;
  padding: 2.5em 1.5em 1.5em 1.5em;
  color: #ffffff;
+ position: fixed;
+ top: 0;
 }
 
 .downArrow {
