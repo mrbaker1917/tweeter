@@ -11,6 +11,7 @@
   background: inherit;
   text-align: left;
   color: grey;
+  resize: none;
 }
 
 .tweet-btn-char-num {
