@@ -6,7 +6,40 @@
 
 // shows user's handle on mouseover tweet
 $(document).ready(function() {
-
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1599073370257
+    },
+    {
+      "user": {
+        "name": "Himka",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@jphimka" },
+      "content": {
+        "text": "Capitalism undermines the value of human activity."
+      },
+      "created_at": 1568142667304
+    }
+  ];
   //function that takes in a tweet object and returns a tweet article element
   const createTweetElement = function(tweetObj) {
     const createdAt = tweetObj.created_at;
@@ -34,24 +67,13 @@ $(document).ready(function() {
     `);
     return $tweet;
   };
-  const tweet = {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-  $("#tweet-container").append(createTweetElement(tweet));
 
   const renderTweets = function(data) {
     for (const tweet of data) {
-      createTweetElement(tweet);
+      $("#tweet-container").prepend(createTweetElement(tweet));
     }
   };
+  renderTweets(data);
 });
 
 
