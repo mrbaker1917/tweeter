@@ -27,19 +27,19 @@ article.tweet {
   height: 220px;
 }
 
-div#avatar {
+div.avatar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
 
-div#avatar img {
+div.avatar img {
   padding-right: 10px;
 }
 
 .handle {
-  opacity: 0;
+  opacity: 0.1;
   color: lightsteelblue;
 }
 
@@ -47,7 +47,7 @@ div#avatar img {
   opacity: 1.0;
 }
 
-article.tweet p {
+p.tweetText {
   font-size: smaller;
   font-weight: 600;
   margin-left: 20px;
