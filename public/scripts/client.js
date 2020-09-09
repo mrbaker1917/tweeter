@@ -45,14 +45,23 @@ $(document).ready(function() {
     const $tweetForm = $(".tweet-form");
     $tweetForm.submit(function(event) {
       event.preventDefault();
+      const tweetText = $("#tweet-text").val();
+      if (tweetText.length === 0) {
+        alert("Please enter some text to tweet!");
+        return;
+      }
+      if (tweetText.length > 140) {
+        alert("Please include a maximum of 140 characters in your tweet!");
+        return;
+      }
       const serializedData = $(this).serialize();
-      console.log(serializedData);
       $.ajax({
         url: "/tweets",
         method: "POST",
         data: serializedData
       })
         .done(function() {
+          $("#tweet-text").empty();
         });
     });
   });
