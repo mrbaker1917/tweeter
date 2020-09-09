@@ -38,9 +38,13 @@ div#avatar img {
   padding-right: 10px;
 }
 
-#handle {
-  opacity: 0.1;
+.handle {
+  opacity: 0;
   color: lightsteelblue;
+}
+
+.handleShow {
+  opacity: 1.0;
 }
 
 article.tweet p {

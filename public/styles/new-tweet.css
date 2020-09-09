@@ -1,9 +1,11 @@
+
 .new-tweet {
   width: 90%;
   font-weight: 700;
   color: grey;
   margin-top: 20px;
 }
+
 #tweet-text {
   width: 100%;
   border: 3px solid black;

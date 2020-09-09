@@ -4,11 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+ // shows user's handle on mouseover tweet
 $(document).ready(() => {
   $("article.tweet").mouseenter((event) => {
-    $("#handle").css("opacity", "1.0");
+    $(".handle").addClass("handleShow");
   });
   $("article.tweet").mouseleave((event) => {
-    $("#handle").css("opacity", "0.1");
+    $(".handle").removeClass("handleShow");
   });
 });
