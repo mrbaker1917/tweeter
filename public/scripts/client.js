@@ -60,8 +60,8 @@ $(document).ready(function() {
         method: "POST",
         data: serializedData
       })
-        .done(function() {
-          $("#tweet-text").empty();
+        .then(function() {
+          $(".tweet-form")[0].reset();
         });
     });
   });
@@ -80,6 +80,10 @@ $(document).ready(function() {
       }
     });
   };
+  const tweetButton = $("#tweet-btn");
+  tweetButton.click(() => {
+    loadTweets();
+  })
   loadTweets();
 });
 
