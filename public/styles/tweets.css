@@ -7,10 +7,15 @@ article.tweet header {
   padding: 0.75em 0.75em;
   height: 100px;
   margin-top: 0;
+
 }
 
 #tweet-container {
   width: 100%;
+}
+
+article.tweet:hover {
+  box-shadow: 10px 10px lightsteelblue;
 }
 
 article.tweet {
@@ -31,14 +36,19 @@ div#avatar {
 }
 
 div#avatar img {
-  padding-right: 10px;;
+  padding-right: 10px;
+}
+
+#handle {
+  opacity: 0.1;
+  color: lightsteelblue;
 }
 
 article.tweet p {
   font-size: smaller;
   font-weight: 600;
-  width: 100%;
   margin-left: 20px;
+  background-color: #f4f1ec;
 }
 
 article.tweet footer {
