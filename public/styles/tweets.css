@@ -7,7 +7,6 @@ article.tweet header {
   padding: 0.75em 0.75em;
   height: 100px;
   margin-top: 0;
-
 }
 
 #tweet-container {
@@ -25,7 +24,7 @@ article.tweet {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  height: 210px;
+  height: 220px;
 }
 
 div#avatar {
@@ -51,6 +50,13 @@ article.tweet p {
   background-color: #f4f1ec;
 }
 
+#icons {
+  color:#4056A1;
+  display: flex;
+  justify-content: space-between;
+  width: 7%;
+}
+
 article.tweet footer {
   border-top: 4px solid black;
   width: 98%;
@@ -58,4 +64,8 @@ article.tweet footer {
   padding: 10px;
   font-size: small;
   font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
