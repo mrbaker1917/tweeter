@@ -21,6 +21,7 @@ $(document).ready(function() {
       }
     });
   };
+  loadTweets();
   // makes it so tweets reload on 'tweet' button click.
   const tweetButton = $("#tweet-btn");
   tweetButton.click(() => {
@@ -88,6 +89,7 @@ $(document).ready(function() {
       })
         .then(function() {
           $(".tweet-form")[0].reset();
+          $(".counter")[0].reset();
         });
     });
   });
