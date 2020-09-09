@@ -7,21 +7,47 @@
 // shows user's handle on mouseover tweet
 $(document).ready(function() {
 
+  // function to get tweets from database
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'JSON',
+      success: (tweets) => {
+        renderTweets(tweets);
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
+  };
+  // makes it so tweets reload on 'tweet' button click.
+  const tweetButton = $("#tweet-btn");
+  tweetButton.click(() => {
+    loadTweets();
+  });
+
   //function that takes in a tweet object and returns a tweet article element
   const createTweetElement = function(tweetObj) {
     const createdAt = tweetObj.created_at;
     const currentDate = Date.now();
     const daysSince = Math.round((currentDate - createdAt) / 1000 / 3600 / 24);
+    // function esape disarms malicious code in tweetObj.
+    const escape = function(str) {
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
     let $tweet = $(`
     <article class="tweet">
       <header>
         <div class="avatar">
-          <img src=${tweetObj.user.avatars} />
-          <span class="name">${tweetObj.user.name}</span>
+          <img src=${escape(tweetObj.user.avatars)} />
+          <span class="name">${escape(tweetObj.user.name)}</span>
         </div>
-        <span class="handle">${tweetObj.user.handle}</span>
+        <span class="handle">${escape(tweetObj.user.handle)}</span>
       </header>
-      <p class="tweetText">${tweetObj.content.text}</p>
+      <p class="tweetText">${escape(tweetObj.content.text)}</p>
       <footer>
         <span class="daysSince">${daysSince} days ago</span>
         <div id="icons">
@@ -40,7 +66,7 @@ $(document).ready(function() {
       $("#tweet-container").prepend(createTweetElement(tweet));
     }
   };
-// sends a post request to the server on submit
+  // sends a post request to the server on submit
   $(function() {
     const $tweetForm = $(".tweet-form");
     $tweetForm.submit(function(event) {
@@ -65,26 +91,7 @@ $(document).ready(function() {
         });
     });
   });
-
-  // function to get tweets from database
-  const loadTweets = function() {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      dataType: 'JSON',
-      success: (tweets) => {
-        renderTweets(tweets);
-      },
-      error: (error) => {
-        console.error(error);
-      }
-    });
-  };
-  const tweetButton = $("#tweet-btn");
-  tweetButton.click(() => {
-    loadTweets();
-  })
-  loadTweets();
+  // loadTweets();
 });
 
 
