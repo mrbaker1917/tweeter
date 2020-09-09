@@ -43,7 +43,7 @@ div.avatar img {
   color: lightsteelblue;
 }
 
-.handleShow {
+article.tweet:hover .handle {
   opacity: 1.0;
 }
 
