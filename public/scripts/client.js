@@ -23,7 +23,8 @@ $(document).ready(function() {
       "user": {
         "name": "Descartes",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
+        "handle": "@rd"
+      },
       "content": {
         "text": "Je pense , donc je suis"
       },
@@ -33,7 +34,8 @@ $(document).ready(function() {
       "user": {
         "name": "Himka",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@jphimka" },
+        "handle": "@jphimka"
+      },
       "content": {
         "text": "Capitalism undermines the value of human activity."
       },
@@ -74,6 +76,23 @@ $(document).ready(function() {
     }
   };
   renderTweets(data);
+
+  $(function() {
+    const $tweetForm = $(".tweet-form");
+    $tweetForm.submit(function(event) {
+      event.preventDefault();
+      const serializedData = $(this).serialize();
+      console.log(serializedData);
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: serializedData
+      })
+        .done(function() {
+          $(console.log(serializedData));
+        });
+    });
+  });
 });
 
 
