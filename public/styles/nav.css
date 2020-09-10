@@ -4,14 +4,14 @@
   text-decoration: none;
   font-family: 'Bungee', cursive;
   margin-top: 10px;
+  padding: 5px;
 }
 
 #brandName a:hover {
   color: #4056A1;
-  padding: 5px;
   background-color: #ffffff;
   height: 100%;
-  border-radius: 10px 0;
+  border-radius: 5px 0;
   font-weight: 900;
 }
 
@@ -25,6 +25,8 @@
 
 nav {
  display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
  justify-content: space-between;
  width: 100%;
  background-color: #4056A1;
@@ -33,6 +35,29 @@ nav {
  color: #ffffff;
  position: fixed;
  top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    justify-content: unset;
+    flex-wrap: nowrap;
+    padding-top: 1em;
+  }
+  #brandName a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #brandName a:hover {
+    color: #ffffff;
+    background-color: #4056A1;
+    height: 100%;
+    border-radius: 5px 0;
+  }
+  #writeTweet {
+    text-align: center;
+  }
 }
 
 .downArrow {
