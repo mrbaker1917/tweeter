@@ -43,6 +43,10 @@ div.avatar img {
   color: lightsteelblue;
 }
 
+article.tweet:hover #icons {
+  opacity: 1.0;
+}
+
 article.tweet:hover .handle {
   opacity: 1.0;
 }
@@ -59,6 +63,7 @@ p.tweetText {
   display: flex;
   justify-content: space-between;
   width: 7%;
+  opacity: 0.1;
 }
 
 article.tweet footer {

@@ -15,6 +15,14 @@
   font-weight: 900;
 }
 
+@keyframes moveDownArrow {
+  0% { margin-top: 0; }
+  100% { margin-top: 20px;}
+}
+.downArrow {
+  animation: moveDownArrow 1s infinite;
+}
+
 nav {
  display: flex;
  justify-content: space-between;

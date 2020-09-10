@@ -4,9 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// shows user's handle on mouseover tweet
 $(document).ready(function() {
-
   // renders the tweet from the database, prepending them to the top of tweet-container
   const renderTweets = function(data) {
     for (const tweet of data) {
