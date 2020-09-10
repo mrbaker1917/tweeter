@@ -7,6 +7,12 @@
 // shows user's handle on mouseover tweet
 $(document).ready(function() {
 
+  // renders the tweet from the database, prepending them to the top of tweet-container
+  const renderTweets = function(data) {
+    for (const tweet of data) {
+      $("#tweet-container").prepend(createTweetElement(tweet));
+    }
+  };
   // function to get tweets from database
   const loadTweets = function() {
     $.ajax({
@@ -24,8 +30,12 @@ $(document).ready(function() {
   loadTweets();
   // makes it so tweets reload on 'tweet' button click.
   const tweetButton = $("#tweet-btn");
-  tweetButton.click(() => {
-    loadTweets();
+  tweetButton.click(function() {
+    errorMessage.slideUp();
+  });
+
+  $("#writeTweet").on("click", () => {
+    $(".new-tweet").toggle();
   });
 
   //function that takes in a tweet object and returns a tweet article element
@@ -61,24 +71,22 @@ $(document).ready(function() {
     `);
     return $tweet;
   };
-  // renders the tweet from the database, prepending them to the top of tweet-container
-  const renderTweets = function(data) {
-    for (const tweet of data) {
-      $("#tweet-container").prepend(createTweetElement(tweet));
-    }
-  };
+
   // sends a post request to the server on submit
+  const errorMessage = $("#error-message");
   $(function() {
     const $tweetForm = $(".tweet-form");
     $tweetForm.submit(function(event) {
       event.preventDefault();
       const tweetText = $("#tweet-text").val();
       if (tweetText.length === 0) {
-        alert("Please enter some text to tweet!");
+        errorMessage.text("Please enter some text to tweet!");
+        errorMessage.slideDown();
         return;
       }
       if (tweetText.length > 140) {
-        alert("Please include a maximum of 140 characters in your tweet!");
+        errorMessage.text("Please include a maximum of 140 characters in your tweet!");
+        errorMessage.slideDown();
         return;
       }
       const serializedData = $(this).serialize();
@@ -89,11 +97,11 @@ $(document).ready(function() {
       })
         .then(function() {
           $(".tweet-form")[0].reset();
-          $(".counter")[0].reset();
+          $(".counter").text(140);
+          loadTweets();
         });
     });
   });
-  // loadTweets();
 });
 
 

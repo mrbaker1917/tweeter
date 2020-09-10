@@ -26,14 +26,14 @@
   <script src="https://kit.fontawesome.com/f6144c0de5.js" crossorigin="anonymous"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <span id="brandName"><a href="/index.html">tweeter</a></span>
+    <span id="brandName"><a>tweeter</a></span>
     <div id="writeTweet">
       <span><strong>Write</strong> a new tweet</span>
       <p><i class="downArrow"></i></p>
@@ -54,8 +54,9 @@
   <main>
     <section class="new-tweet">
       <form method="POST" action="/tweets" class="tweet-form">
+        <div id="error-message"></div>
         <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" placeholder=""></textarea>
+        <textarea name="text" id="tweet-text"></textarea>
         <div class="tweet-btn-char-num">
           <button type="submit" id="tweet-btn">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>

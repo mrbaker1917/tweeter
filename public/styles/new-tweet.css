@@ -4,6 +4,7 @@
   font-weight: 700;
   color: grey;
   margin-top: 20px;
+  display: none;
 }
 
 #tweet-text {
