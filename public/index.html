@@ -34,8 +34,11 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span id="brandName"><a>tweeter</a></span>
+
     <div id="writeTweet">
-      <span><strong>Write</strong> a new tweet</span>
+      <a title="Click here to make a new tweet!">
+        <span><strong>Write</strong> a new tweet</span>
+      </a>
       <p><i class="downArrow"></i></p>
       <p><i class="downArrow"></i></p>
     </div>
@@ -52,7 +55,7 @@
 
   <!-- Page-specific (main) content here -->
   <main>
-    <section class="new-tweet">
+    <section id="newTweetForm" class="new-tweet">
       <form method="POST" action="/tweets" class="tweet-form">
         <div id="error-message"></div>
         <label for="tweet-text">What are you humming about?</label>

@@ -34,8 +34,10 @@ $(document).ready(function() {
     errorMessage.slideUp();
   });
 
+  // when user clicks on right top corner write-tweet, form slides down, focus in textarea
   $("#writeTweet").on("click", () => {
-    $(".new-tweet").toggle();
+    $(".new-tweet").toggle(1000);
+    $("#tweet-text").focus();
   });
 
   //function that takes in a tweet object and returns a tweet article element

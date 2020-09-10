@@ -7,6 +7,11 @@
   display: none;
 }
 
+.new-tweet:hover {
+  color: grey;
+  font-weight: 900;
+}
+
 #tweet-text {
   width: 100%;
   border: 3px solid black;
