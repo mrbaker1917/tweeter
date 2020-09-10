@@ -7,9 +7,16 @@
   display: none;
 }
 
-.new-tweet:hover {
-  color: grey;
+#tweet-btn-form {
+  color: #ffffff;
+}
+
+#tweet-btn-form:hover {
+  color: #4056A1;
   font-weight: 900;
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 5px 0;
 }
 
 #tweet-text {
