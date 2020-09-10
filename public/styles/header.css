@@ -9,3 +9,7 @@ header {
   background-color: olivedrab;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
+
+h2 {
+  margin-top: -20px;
+}

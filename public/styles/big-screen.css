@@ -1,0 +1,21 @@
+@media only screen and (min-width: 1024px) {
+  #main-container {
+   width: 100%;
+   background-color: inherit;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+ }
+ main {
+   margin-top: 100px;
+   width: 60%;
+   margin: 165px 1.5em 0 1.5em;
+ }
+ header {
+   width: 40%;
+   margin: 200px 1.5em 0 1.5em;
+ }
+ nav {
+  background-color: #4056A1;
+ }
+}
