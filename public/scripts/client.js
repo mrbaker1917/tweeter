@@ -26,7 +26,7 @@ $(document).ready(function() {
     });
   };
   loadTweets();
-  // makes it so tweets reload on 'tweet' button click.
+  // makes it so error message slides up on clicking tweet button
   const tweetButton = $("#tweet-btn");
   tweetButton.click(function() {
     errorMessage.slideUp();
@@ -41,7 +41,7 @@ $(document).ready(function() {
   //function that takes in a tweet object and returns a tweet article element
   const createTweetElement = function(tweetObj) {
     const createdAt = tweetObj.created_at;
-    const daysSince = moment(createdAt).fromNow(); 
+    const daysSince = moment(createdAt).fromNow();
     // function escape disarms malicious code in tweetObj.
     const escape = function(str) {
       let div = document.createElement('div');
@@ -71,7 +71,7 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  // sends a post request to the server on submit
+  // sends a post request to the server on submit and shows errors
   const errorMessage = $("#error-message");
   $(function() {
     const $tweetForm = $(".tweet-form");
