@@ -4,18 +4,21 @@
    background-color: inherit;
    display: flex;
    flex-direction: row;
-   justify-content: space-around;
+   justify-content: space-between;
  }
  main {
    margin-top: 100px;
    width: 60%;
    margin: 165px 1.5em 0 1.5em;
  }
- header {
+  header {
    width: 40%;
    margin: 200px 1.5em 0 1.5em;
  }
  nav {
   background-color: #4056A1;
+ }
+ .handle {
+   justify-self: right;
  }
 }
