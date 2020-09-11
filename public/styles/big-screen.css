@@ -21,4 +21,7 @@
  .handle {
    justify-self: right;
  }
+ article.tweet header {
+   width: 95%;
+ }
 }
