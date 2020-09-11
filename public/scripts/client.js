@@ -41,9 +41,8 @@ $(document).ready(function() {
   //function that takes in a tweet object and returns a tweet article element
   const createTweetElement = function(tweetObj) {
     const createdAt = tweetObj.created_at;
-    const currentDate = Date.now();
-    const daysSince = Math.round((currentDate - createdAt) / 1000 / 3600 / 24);
-    // function esape disarms malicious code in tweetObj.
+    const daysSince = moment(createdAt).fromNow(); 
+    // function escape disarms malicious code in tweetObj.
     const escape = function(str) {
       let div = document.createElement('div');
       div.appendChild(document.createTextNode(str));
@@ -60,7 +59,7 @@ $(document).ready(function() {
       </header>
       <p class="tweetText">${escape(tweetObj.content.text)}</p>
       <footer>
-        <span class="daysSince">${daysSince} days ago</span>
+        <span class="daysSince">${daysSince}</span>
         <div id="icons">
           <i class="fas fa-flag"></i>
           <i class="fas fa-retweet"></i>
