@@ -52,7 +52,7 @@ nav {
   }
   #brandName a:hover {
     color: #ffffff;
-    background-color: #4056A1;
+    background-color: inherit;
     height: 100%;
     border-radius: 5px 0;
   }
